@@ -10,11 +10,14 @@ const initialState = {
         {id:8, name:"Men Jacket", image:"8.jpg", price: 31, discount:4, discountPrice: 31 - 4/ 100 * 31, quantity: 3, description:"Uniquely leverage existing competitive vortals before web-enabled quality vectors. Credibly negotiate out-of-the-box information whereas accurate."},
         {id:9, name:"Men stripted shirt", image:"9.jpg", price: 34, discount:5, discountPrice: 34 - 5/ 100 * 34, quantity: 1, description:"Uniquely leverage existing competitive vortals before web-enabled quality vectors. Credibly negotiate out-of-the-box information whereas accurate."},
         {id:10, name:"Man Jacket", image:"10.jpg", price: 41, discount:4, discountPrice: 41 - 4/ 100 * 41, quantity: 3, description:"Uniquely leverage existing competitive vortals before web-enabled quality vectors. Credibly negotiate out-of-the-box information whereas accurate."}
-    ]
+    ],
+    product:{}
 }
 
 const ProductReducer = (state = initialState, action:any) => {
     switch(action.type) {
+        case "PRODUCT":
+            return {...state, product:state.products.find(item => item.id === Number(action.id))}
         default:
             return state;
     }

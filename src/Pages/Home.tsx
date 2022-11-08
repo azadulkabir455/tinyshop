@@ -4,7 +4,6 @@ import { useSelector } from "react-redux"
 
 export default function Home() {
   const { products } = useSelector((state: any) => state.ProductReducer);
-  console.log("Products", products)
   return (
     <>
       <Header />
@@ -14,7 +13,7 @@ export default function Home() {
             products.map((singleItem: any) =>
               <div className="col-12 col-md-6 col-lg-4 mt-3">
                 <div className="card singleProduct">
-                  <Link to=""><img src={`images/${singleItem.image}`} className="card-img-top" alt="..." /></Link>
+                  <Link to={`/product/${singleItem.id}`}><img src={`images/${singleItem.image}`} className="card-img-top" alt="..." /></Link>
                     <div className="card-body">
                       <h4>{singleItem.name}</h4>
                       <div className="d-flex justify-content-between contentPrice">
