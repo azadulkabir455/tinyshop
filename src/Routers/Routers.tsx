@@ -9,14 +9,12 @@ import SinngleProduct from "../Pages/SinngleProduct"
 export default function Routers() {
   return (
     <>
-      <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/product/:id" element={<SinngleProduct />}/>
-          <Route path="/addcart" element={<AddToCart />} />
-        </Routes>
-      </Provider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/addproduct" element={<AddProduct />} />
+        <Route path="/product/:id" element={<SinngleProduct />} />
+        <Route path="/addcart" element={<AddToCart />} />
+      </Routes>
     </>
   )
 }

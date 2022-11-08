@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 
 export default function Home() {
   const { products } = useSelector((state: any) => state.ProductReducer);
+ 
   return (
     <>
       <Header />
@@ -11,8 +12,8 @@ export default function Home() {
         <div className="row">
           {
             products.map((singleItem: any) =>
-              <div className="col-12 col-md-6 col-lg-4 mt-3">
-                <div className="card singleProduct">
+              <div className="col-12 col-md-6 col-lg-4 mt-3" key={singleItem.id}>
+                <div className="card singleProduct" >
                   <Link to={`/product/${singleItem.id}`}><img src={`images/${singleItem.image}`} className="card-img-top" alt="..." /></Link>
                     <div className="card-body">
                       <h4>{singleItem.name}</h4>
